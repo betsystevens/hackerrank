@@ -1,11 +1,5 @@
 'use strict';
-// Given an array, A, of N integers, print A's elements in reverse 
-// order as a single line of space-separated numbers. 
-// sample input
-// 4
-// 1 4 3 2
-// output
-// 2 3 4 1 
+
 process.stdin.resume();
 process.stdin.setEncoding('utf-8');
 
@@ -29,12 +23,16 @@ function readLine() {
 }
 
 function main() {
-    // not used...
-    const n = parseInt(readLine(), 10);
+    const N = parseInt(readLine(), 10);
+    const num = Number(N) 
+    if (num % 2 !== 0) {
+        console.log('Weird')
+    } else {
+      if ((6 <= num) && (num <= 20)) {
+        console.log('Weird')
+      } else {
+        console.log ('Not Weird')
+      }
+    }
 
-    const arr = readLine().split(' ').map(arrTemp => parseInt(arrTemp, 10));
-    console.log(arr);
-    // [1, 4, 3, 2]
-
-    console.log(arr.reverse().join(' '));
 }

@@ -1,11 +1,5 @@
 'use strict';
-// Given an array, A, of N integers, print A's elements in reverse 
-// order as a single line of space-separated numbers. 
-// sample input
-// 4
-// 1 4 3 2
-// output
-// 2 3 4 1 
+
 process.stdin.resume();
 process.stdin.setEncoding('utf-8');
 
@@ -28,13 +22,32 @@ function readLine() {
     return inputString[currentLine++];
 }
 
+
+
 function main() {
-    // not used...
     const n = parseInt(readLine(), 10);
 
     const arr = readLine().split(' ').map(arrTemp => parseInt(arrTemp, 10));
-    console.log(arr);
-    // [1, 4, 3, 2]
 
-    console.log(arr.reverse().join(' '));
+    // [1, 4, 3, 2]
+    console.log(arr);
+
+    // reverse array into newArr
+    let l = arr.length;
+    let newArr = arr.slice(-1);
+    console.log(newArr);
+    for (let i = 1; i < l; i++){
+      newArr = newArr.concat(arr.slice(-i-1,-i));
+      console.log(newArr);
+    }
+
+    // use reduce to convert array elements to a string
+    let result = newArr.reduce(makeString, '');
+
+    function makeString(numString, num){ 
+      return numString + num.toString() + ' ';
+    }
+    console.log(result);
+
+
 }

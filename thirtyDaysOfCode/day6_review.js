@@ -40,10 +40,11 @@ function processData(input) {
 process.stdin.resume();
 process.stdin.setEncoding("ascii");
 _input = "";
-process.stdin.on("data", function (input) {
+process.stdin.on("data", function bar (input) {
     _input += input;
 });
 
-process.stdin.on("end", function () {
+process.stdin.on("end", function foo() {
    processData(_input);
 });
+
